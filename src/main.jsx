@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
 
 const githubUrl = "https://github.com/Stp155906";
 const linkedinUrl = "https://www.linkedin.com/in/shantalia-perez/";
 const nasaRepoUrl = "https://github.com/sea-surface-teleconnections";
+const castellaPrototypeUrl = "https://castella-space.vercel.app/";
 const email = "shantalia.IOSDEV@gmail.com";
 
 const projects = [
@@ -15,6 +16,13 @@ const projects = [
     summary:
       "A SwiftUI astrology app with Apple Sign-In, Firebase-backed profiles, premium subscriptions, onboarding, push alert preferences, ephemeris data, retrograde forecasts, numerology, and astrocartography tools.",
     tags: ["SwiftUI", "Firebase", "StoreKit"],
+    link: castellaPrototypeUrl,
+    linkLabel: "Open Castella prototype",
+    steps: [
+      "I started by shaping the product story: a cosmic companion app that makes astrology tools feel visual, modern, and personal.",
+      "I mapped the onboarding, account, birthday, premium, and alert flows before building the SwiftUI app structure.",
+      "I connected Firebase auth/profile data, Qonversion subscriptions, push-alert preferences, and astrology data services so the MVP can keep expanding.",
+    ],
   },
   {
     title: "Veilbound: Sacred Trials",
@@ -23,6 +31,11 @@ const projects = [
     summary:
       "A mythic game prototype built around sacred trials, realm shifting, candlelight, spirit pressure, and an underworld canoe passage.",
     tags: ["Game Design", "JavaScript", "Prototype"],
+    steps: [
+      "I defined the core loop first: enter the trial, shift realms, collect candlelight, and survive the passage.",
+      "I prototyped the realm-shift mechanic and canoe trial so the gameplay could be tested before final assets existed.",
+      "I used atmosphere, motion, and symbolic visuals to communicate the world while the larger game direction is still forming.",
+    ],
   },
   {
     title: "iOS Project Suite",
@@ -31,6 +44,11 @@ const projects = [
     summary:
       "A growing set of SwiftUI app ideas focused on clean flows, restrained interfaces, and mobile-first product thinking.",
     tags: ["SwiftUI", "iOS", "UX"],
+    steps: [
+      "I start with the user flow and interface structure before writing production screens.",
+      "I use Figma, sketches, or rough wireframes to clarify the experience and visual direction.",
+      "I translate the design into SwiftUI components with responsive layout, animation, and reusable interaction patterns.",
+    ],
   },
   {
     title: "NASA Data Internship",
@@ -41,6 +59,11 @@ const projects = [
     tags: ["Data", "Research", "NASA"],
     link: nasaRepoUrl,
     linkLabel: "View internship repo",
+    steps: [
+      "I worked with real-world climate data and focused on making the information usable for analysis and visualization.",
+      "I organized data into clearer structures so patterns, relationships, and outputs could be easier to work with.",
+      "I learned how important cleaning, explaining, and delivering data is when other people need to trust the result.",
+    ],
   },
 ];
 
@@ -170,6 +193,8 @@ function Work() {
 }
 
 function ProjectCard({ project, featured }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <article className={`project-card ${featured ? "featured" : ""}`} data-reveal>
       <ProjectVisual tone={project.tone} />
@@ -182,10 +207,33 @@ function ProjectCard({ project, featured }) {
             <li key={tag}>{tag}</li>
           ))}
         </ul>
-        {project.link && (
-          <a className="project-link" href={project.link}>
-            {project.linkLabel}
-          </a>
+        <button
+          className="build-toggle"
+          type="button"
+          aria-expanded={isOpen}
+          onClick={() => setIsOpen((current) => !current)}
+        >
+          <span>{isOpen ? "Hide process" : "How I built it"}</span>
+          <span aria-hidden="true">{isOpen ? "−" : "+"}</span>
+        </button>
+        {isOpen && (
+          <div className="build-caption">
+            <ul className="build-steps">
+              {project.steps.map((step, index) => (
+                <li key={step}>
+                  <span className="step-number">{String(index + 1).padStart(2, "0")}</span>
+                  <div>
+                    <p>{step}</p>
+                    {index === 0 && project.link && (
+                      <a className="step-link" href={project.link}>
+                        {project.linkLabel}
+                      </a>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
       </div>
     </article>
