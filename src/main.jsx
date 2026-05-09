@@ -242,12 +242,11 @@ function ProjectVisual({ tone }) {
     <div className={`project-visual ${tone}-visual`} aria-hidden="true">
       {tone === "castella" && (
         <>
-          <span className="castella-phone" />
           <span className="castella-orbit castella-orbit-one" />
           <span className="castella-orbit castella-orbit-two" />
+          <img className="castella-app-icon" src="/assets/castella-app-icon.png" alt="Castella app icon" />
           <span className="castella-star castella-star-one" />
           <span className="castella-star castella-star-two" />
-          <span className="castella-alert" />
         </>
       )}
       {tone === "veilbound" && (
