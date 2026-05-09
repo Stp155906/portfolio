@@ -160,15 +160,21 @@ function Hero() {
         </div>
       </div>
 
-      <aside className="identity-card drift-card" data-reveal aria-label="Profile focus">
-        <div className="portrait-placeholder" aria-hidden="true">
-          <span />
-        </div>
+      <aside className="identity-card current-focus-card" data-reveal aria-label="Current portfolio focus">
         <p className="card-kicker">Current focus</p>
+        <h2>Castella app prototype</h2>
+        <p>
+          I am currently presenting Castella as both a web story and an interactive iOS demo, so people can understand
+          the product direction and try the mobile experience directly in the browser.
+        </p>
+        <div className="focus-actions">
+          <a className="focus-link primary" href={castellaPrototypeUrl}>Open web prototype <span aria-hidden="true">→</span></a>
+          <a className="focus-link" href={castellaAppetizeUrl}>Try iOS demo <span aria-hidden="true">→</span></a>
+        </div>
         <ul className="focus-list">
-          <li>Swift and SwiftUI iOS apps</li>
-          <li>OpenClaw and AI workflow systems</li>
-          <li>JSON data pipelines and automation</li>
+          <li>Swift and SwiftUI iOS app in progress</li>
+          <li>Interactive Appetize browser demo</li>
+          <li>Design-forward astrology product storytelling</li>
         </ul>
       </aside>
     </section>
