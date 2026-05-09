@@ -137,7 +137,7 @@ function Header() {
 
 function Hero() {
   return (
-    <section className="hero section-grid" aria-labelledby="hero-title">
+    <section className="hero" aria-labelledby="hero-title">
       <div className="parallax-shape orb-one" aria-hidden="true" />
       <div className="parallax-shape orb-two" aria-hidden="true" />
       <div className="grid-plane" aria-hidden="true" />
@@ -159,24 +159,6 @@ function Hero() {
           <a className="button ghost" href={githubUrl}>GitHub: Stp155906</a>
         </div>
       </div>
-
-      <aside className="identity-card current-focus-card" data-reveal aria-label="Current portfolio focus">
-        <p className="card-kicker">Current focus</p>
-        <h2>Castella app prototype</h2>
-        <p>
-          I am currently presenting Castella as both a web story and an interactive iOS demo, so people can understand
-          the product direction and try the mobile experience directly in the browser.
-        </p>
-        <div className="focus-actions">
-          <a className="focus-link primary" href={castellaPrototypeUrl}>Open web prototype <span aria-hidden="true">→</span></a>
-          <a className="focus-link" href={castellaAppetizeUrl}>Try iOS demo <span aria-hidden="true">→</span></a>
-        </div>
-        <ul className="focus-list">
-          <li>Swift and SwiftUI iOS app in progress</li>
-          <li>Interactive Appetize browser demo</li>
-          <li>Design-forward astrology product storytelling</li>
-        </ul>
-      </aside>
     </section>
   );
 }
