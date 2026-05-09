@@ -230,12 +230,12 @@ function ProjectCard({ project, featured }) {
                     <p>{step}</p>
                     {index === 0 && project.link && (
                       <a className="step-link" href={project.link}>
-                        {project.linkLabel}
+                        {project.linkLabel} <span aria-hidden="true">→</span>
                       </a>
                     )}
                     {index === 1 && project.secondaryLink && (
                       <a className="step-link" href={project.secondaryLink}>
-                        {project.secondaryLinkLabel}
+                        {project.secondaryLinkLabel} <span aria-hidden="true">→</span>
                       </a>
                     )}
                   </div>
