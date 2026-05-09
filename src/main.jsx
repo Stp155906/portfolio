@@ -6,6 +6,7 @@ const githubUrl = "https://github.com/Stp155906";
 const linkedinUrl = "https://www.linkedin.com/in/shantalia-perez/";
 const nasaRepoUrl = "https://github.com/sea-surface-teleconnections";
 const castellaPrototypeUrl = "https://castella-space.vercel.app/";
+const castellaAppetizeUrl = "https://appetize.io/app/b_pktzuibmq6dv263m5ap7hoxywi?device=iphone14pro&osVersion=26.0&toolbar=true";
 const email = "shantalia.IOSDEV@gmail.com";
 
 const projects = [
@@ -17,9 +18,12 @@ const projects = [
       "A SwiftUI astrology app with Apple Sign-In, Firebase-backed profiles, premium subscriptions, onboarding, push alert preferences, ephemeris data, retrograde forecasts, numerology, and astrocartography tools.",
     tags: ["SwiftUI", "Firebase", "StoreKit"],
     link: castellaPrototypeUrl,
-    linkLabel: "Open Castella prototype",
+    linkLabel: "Open Castella web prototype",
+    secondaryLink: castellaAppetizeUrl,
+    secondaryLinkLabel: "Open interactive iOS demo",
     steps: [
       "I started by shaping the product story: a cosmic companion app that makes astrology tools feel visual, modern, and personal.",
+      "I created an Appetize iOS demo so people can try the prototype in a browser without installing it.",
       "I mapped the onboarding, account, birthday, premium, and alert flows before building the SwiftUI app structure.",
       "I connected Firebase auth/profile data, Qonversion subscriptions, push-alert preferences, and astrology data services so the MVP can keep expanding.",
     ],
@@ -227,6 +231,11 @@ function ProjectCard({ project, featured }) {
                     {index === 0 && project.link && (
                       <a className="step-link" href={project.link}>
                         {project.linkLabel}
+                      </a>
+                    )}
+                    {index === 1 && project.secondaryLink && (
+                      <a className="step-link" href={project.secondaryLink}>
+                        {project.secondaryLinkLabel}
                       </a>
                     )}
                   </div>
