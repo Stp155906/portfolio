@@ -166,9 +166,9 @@ function Header() {
 function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
-      <div className="parallax-shape orb-one" aria-hidden="true" />
-      <div className="parallax-shape orb-two" aria-hidden="true" />
-      <div className="grid-plane" aria-hidden="true" />
+      <div className="hero-surface hero-surface-one" aria-hidden="true" />
+      <div className="hero-surface hero-surface-two" aria-hidden="true" />
+      <div className="hero-panel-lines" aria-hidden="true" />
 
       <div className="hero-copy" data-reveal>
         <div className="progress-badge" aria-label="Site status">
@@ -295,13 +295,22 @@ function ProjectVisual({ tone }) {
           <span className="app-pill" />
         </>
       )}
+      {tone === "signalmap" && (
+        <div className="thumbnail-frame">
+          <img className="project-thumbnail" src="/assets/signalmap-thumbnail.png" alt="SignalMap AI interface thumbnail" />
+        </div>
+      )}
+      {tone === "safeapply" && (
+        <div className="thumbnail-frame">
+          <img className="project-thumbnail" src="/assets/safeapply-thumbnail.png" alt="SafeApply interface thumbnail" />
+        </div>
+      )}
       {tone === "data" && (
-        <>
-          <span className="planet" />
-          <span className="orbit orbit-a" />
-          <span className="orbit orbit-b" />
-          <span className="data-line" />
-        </>
+        <div className="nasa-visual-card">
+          <span>NASA JPL</span>
+          <strong>Jet Propulsion Laboratory</strong>
+          <small>Pasadena, California</small>
+        </div>
       )}
     </div>
   );
