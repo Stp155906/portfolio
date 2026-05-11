@@ -1,15 +1,15 @@
 :root {
   color-scheme: light;
-  --paper: #f6f1e8;
-  --paper-soft: #fffaf0;
-  --ink: #1d211f;
-  --muted: #686a62;
-  --line: rgba(29, 33, 31, 0.14);
-  --moss: #52654f;
-  --cedar: #9c5339;
-  --clay: #d6a56f;
-  --sky: #a9c7c6;
-  --night: #202a2c;
+  --paper: #fbf7ef;
+  --paper-soft: #fffdf7;
+  --ink: #191815;
+  --muted: #746d60;
+  --line: rgba(25, 24, 21, 0.12);
+  --moss: #7b765f;
+  --cedar: #b88a39;
+  --clay: #d8b66d;
+  --sky: #efe6d4;
+  --night: #1d1a15;
   --shadow: 0 26px 80px rgba(54, 45, 31, 0.16);
   --radius: 30px;
   --scroll: 0;
@@ -34,9 +34,9 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background:
-    radial-gradient(circle at 12% 18%, rgba(214, 165, 111, 0.35), transparent 28rem),
-    radial-gradient(circle at 85% 8%, rgba(169, 199, 198, 0.42), transparent 32rem),
-    linear-gradient(135deg, #f7f0e2 0%, #efe5d4 42%, #f9f6ef 100%);
+    radial-gradient(circle at 14% 12%, rgba(216, 182, 109, 0.22), transparent 28rem),
+    radial-gradient(circle at 82% 10%, rgba(255, 253, 247, 0.95), transparent 28rem),
+    linear-gradient(135deg, #fffdf7 0%, #f5eddf 52%, #fbf7ef 100%);
   font-family: "Avenir Next", Avenir, "Gill Sans", Candara, sans-serif;
   overflow-x: hidden;
 }
@@ -440,20 +440,51 @@ p {
   margin-bottom: 34px;
 }
 
-.project-grid {
+.project-timeline {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  gap: 28px;
+}
+
+.project-timeline::before {
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: 62px;
+  width: 1px;
+  content: "";
+  background: linear-gradient(to bottom, transparent, rgba(156, 83, 57, 0.34), transparent);
 }
 
 .project-card {
+  position: relative;
   display: grid;
   overflow: hidden;
 }
 
-.project-card.featured {
-  grid-column: 1 / -1;
-  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.78fr);
+.timeline-card {
+  margin-left: 92px;
+  grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1fr);
+}
+
+.timeline-marker {
+  position: absolute;
+  top: 28px;
+  left: -92px;
+  z-index: 2;
+  display: grid;
+  width: 70px;
+  height: 70px;
+  place-items: center;
+  border: 1px solid rgba(156, 83, 57, 0.2);
+  border-radius: 50%;
+  color: var(--cedar);
+  background: rgba(255, 250, 240, 0.92);
+  box-shadow: 0 18px 40px rgba(54, 45, 31, 0.12);
+  font-family: Didot, "Bodoni 72", Georgia, serif;
+  font-size: 1.08rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
 }
 
 .project-visual {
@@ -480,6 +511,14 @@ p {
   color: #6d4c8d;
   border-color: rgba(109, 76, 141, 0.22);
   background: rgba(109, 76, 141, 0.09);
+}
+
+.status.signalmap,
+.status.safeapply,
+.status.arcs {
+  color: var(--moss);
+  border-color: rgba(82, 101, 79, 0.22);
+  background: rgba(82, 101, 79, 0.09);
 }
 
 .status.ios {
@@ -709,6 +748,98 @@ p {
 .castella-star-two {
   right: 23%;
   bottom: 28%;
+}
+
+.signalmap-visual,
+.safeapply-visual,
+.arcs-visual {
+  background:
+    radial-gradient(circle at 20% 22%, rgba(255, 250, 240, 0.86), transparent 7rem),
+    linear-gradient(145deg, #edf1df 0%, #c8d2bd 54%, #8fa08a 100%);
+}
+
+.signalmap-visual::before {
+  position: absolute;
+  inset: 36px;
+  content: "";
+  border: 1px solid rgba(32, 42, 44, 0.18);
+  border-radius: 26px;
+  background:
+    linear-gradient(90deg, rgba(32, 42, 44, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(32, 42, 44, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.signalmap-visual::after {
+  position: absolute;
+  right: 58px;
+  bottom: 54px;
+  width: 124px;
+  height: 124px;
+  content: "";
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, var(--cedar) 0 10px, transparent 11px),
+    radial-gradient(circle at 50% 50%, rgba(156, 83, 57, 0.28) 0 42px, transparent 43px),
+    rgba(255, 250, 240, 0.5);
+}
+
+.safeapply-visual {
+  background:
+    radial-gradient(circle at 68% 26%, rgba(255, 250, 240, 0.88), transparent 8rem),
+    linear-gradient(145deg, #f6f1e8 0%, #d8c6a7 52%, #9c5339 100%);
+}
+
+.safeapply-visual::before {
+  position: absolute;
+  inset: 44px 50px;
+  content: "";
+  border: 1px solid rgba(32, 42, 44, 0.14);
+  border-radius: 28px;
+  background:
+    linear-gradient(rgba(32, 42, 44, 0.12) 0 0) 34px 42px / 52% 12px no-repeat,
+    linear-gradient(rgba(32, 42, 44, 0.08) 0 0) 34px 72px / 72% 10px no-repeat,
+    linear-gradient(rgba(32, 42, 44, 0.08) 0 0) 34px 98px / 58% 10px no-repeat,
+    rgba(255, 250, 240, 0.68);
+  box-shadow: 0 22px 50px rgba(54, 45, 31, 0.14);
+}
+
+.safeapply-visual::after {
+  position: absolute;
+  right: 58px;
+  bottom: 52px;
+  display: grid;
+  width: 74px;
+  height: 74px;
+  place-items: center;
+  content: "!";
+  border-radius: 50%;
+  color: var(--paper-soft);
+  background: var(--night);
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.arcs-visual {
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 250, 240, 0.86), transparent 7rem),
+    linear-gradient(145deg, #f6f1e8 0%, #ded1bc 54%, #a2aa93 100%);
+}
+
+.arcs-visual::before {
+  position: absolute;
+  inset: 48px;
+  content: "";
+  border: 1px solid rgba(32, 42, 44, 0.14);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 22% 28%, var(--cedar) 0 7px, transparent 8px),
+    radial-gradient(circle at 74% 30%, var(--moss) 0 7px, transparent 8px),
+    radial-gradient(circle at 52% 74%, var(--night) 0 7px, transparent 8px),
+    linear-gradient(34deg, transparent 0 38%, rgba(32, 42, 44, 0.16) 39% 40%, transparent 41%),
+    linear-gradient(144deg, transparent 0 42%, rgba(32, 42, 44, 0.14) 43% 44%, transparent 45%),
+    rgba(255, 250, 240, 0.52);
+  box-shadow: 0 22px 50px rgba(54, 45, 31, 0.12);
 }
 
 .moon {

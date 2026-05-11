@@ -12,63 +12,91 @@ const email = "shantalia.IOSDEV@gmail.com";
 const projects = [
   {
     title: "Castella",
+    year: "2026",
     status: "iOS MVP",
     tone: "castella",
     summary:
-      "A SwiftUI astrology app with Apple Sign-In, Firebase-backed profiles, premium subscriptions, onboarding, push alert preferences, ephemeris data, retrograde forecasts, numerology, and astrocartography tools.",
-    tags: ["SwiftUI", "Firebase", "StoreKit"],
+      "A SwiftUI mobile product prototype for personalized astronomy and ephemeris-based insights, built around a market gap I noticed in tools that have rich celestial data but weaker onboarding, interaction design, and product structure.",
+    tags: ["SwiftUI", "Firebase Auth", "Subscriptions", "Push Alerts", "Ephemeris Data"],
     link: castellaPrototypeUrl,
     linkLabel: "Open Castella web prototype",
     secondaryLink: castellaAppetizeUrl,
     secondaryLinkLabel: "Open interactive iOS demo",
     steps: [
-      "I started by shaping the product story: a cosmic companion app that makes astrology tools feel visual, modern, and personal.",
+      "I started from a market gap: many celestial-data products expose complex information, but do not always make the mobile experience clear, polished, or easy to personalize.",
       "I created an Appetize iOS demo so people can try the prototype in a browser without installing it.",
-      "I mapped the onboarding, account, birthday, premium, and alert flows before building the SwiftUI app structure.",
-      "I connected Firebase auth/profile data, Qonversion subscriptions, push-alert preferences, and astrology data services so the MVP can keep expanding.",
+      "I mapped onboarding, account, birthday, premium, alert, and data-discovery flows before building the SwiftUI app structure.",
+      "I connected Firebase auth/profile data, Qonversion subscriptions, push-alert preferences, and ephemeris-based timing data so the MVP can grow into a more complete product system.",
     ],
   },
   {
-    title: "Veilbound: Sacred Trials",
-    status: "Playable prototype",
-    tone: "veilbound",
+    title: "SignalMap AI",
+    year: "2026",
+    status: "AI Geospatial Dashboard",
+    tone: "signalmap",
     summary:
-      "A mythic game prototype built around sacred trials, realm shifting, candlelight, spirit pressure, and an underworld canoe passage.",
-    tags: ["Game Design", "JavaScript", "Prototype"],
+      "An AI geospatial intelligence dashboard that turns NASA, USGS, and NOAA public data into regional hazard briefings for logistics, safety, insurance, local government, and humanitarian response use cases.",
+    tags: ["React", "Leaflet", "NASA EONET", "NOAA", "USGS"],
+    link: "https://signalmap-ai.vercel.app/",
+    linkLabel: "Open live demo",
     steps: [
-      "I defined the core loop first: enter the trial, shift realms, collect candlelight, and survive the passage.",
-      "I prototyped the realm-shift mechanic and canoe trial so the gameplay could be tested before final assets existed.",
-      "I used atmosphere, motion, and symbolic visuals to communicate the world while the larger game direction is still forming.",
+      "I started with the decision problem: people need regional hazard information that is easier to scan, compare, and act on.",
+      "I built a live map layer with public event feeds, risk scoring, source-aware cards, and role-specific decision lenses.",
+      "I integrated NASA EONET, USGS earthquake feeds, and NOAA/NWS alerts using React, Vite, Leaflet, and Vercel.",
+      "I used AI-assisted development workflows to speed up architecture planning, implementation, and iteration.",
     ],
   },
   {
-    title: "iOS Project Suite",
-    status: "In development",
-    tone: "ios",
+    title: "SafeApply",
+    year: "2026",
+    status: "Chrome Extension",
+    tone: "safeapply",
     summary:
-      "A growing set of SwiftUI app ideas focused on clean flows, restrained interfaces, and mobile-first product thinking.",
-    tags: ["SwiftUI", "iOS", "UX"],
+      "A free Chrome extension that scans visible job posting pages and creates a trust scorecard for suspicious or potentially fraudulent listings.",
+    tags: ["Chrome Extension", "AI Safety", "JavaScript", "Vercel"],
+    link: "https://safeapply-ai.vercel.app/",
+    linkLabel: "Open live demo",
+    secondaryLink: "https://github.com/Stp155906/safeapply",
+    secondaryLinkLabel: "View GitHub repo",
     steps: [
-      "I start with the user flow and interface structure before writing production screens.",
-      "I use Figma, sketches, or rough wireframes to clarify the experience and visual direction.",
-      "I translate the design into SwiftUI components with responsive layout, animation, and reusable interaction patterns.",
+      "I focused on a real safety problem: students and early-career applicants need help spotting risky job posts before sharing personal documents.",
+      "I designed warnings around suspicious recruiter behavior, bank-detail requests, unpaid labor, resumes, and personal-document red flags.",
+      "I built the front-end and extension workflow with modern web tools, then deployed the live project with Vercel.",
     ],
   },
   {
-    title: "NASA Data Internship",
-    status: "Experience",
+    title: "NASA JPL Data Visualization",
+    year: "2022",
+    status: "Software Engineering Internship",
     tone: "data",
     summary:
-      "Data-focused internship experience in a research environment where accuracy, structure, and communication matter.",
-    tags: ["Data", "Research", "NASA"],
-    link: nasaRepoUrl,
-    linkLabel: "View internship repo",
+      "A NASA Jet Propulsion Laboratory internship with the Science Data Visualization Group, focused on sea surface teleconnections, coastal wind, cloud, climate, land, ocean, and anomaly data.",
+    tags: ["Python", "xarray", "geopandas", "AWS", "Climate Data"],
+    link: "https://github.com/sea-surface-teleconnections/jupyter-examples",
+    linkLabel: "View NASA notebook repo",
     steps: [
-      "I worked with real-world climate data and focused on making the information usable for analysis and visualization.",
-      "I organized data into clearer structures so patterns, relationships, and outputs could be easier to work with.",
-      "I learned how important cleaning, explaining, and delivering data is when other people need to trust the result.",
+      "I supported research on sea surface teleconnections and climate patterns as a NASA Fellowship software engineering intern.",
+      "I developed Python notebook tutorials for accessing Earth science data through AWS and preprocessing large climate datasets.",
+      "I built visualizations and animated representations to make complex environmental data clearer for research communication.",
+      "I explored an iOS application concept for interactive climate data visualizations and software-tool guidance.",
     ],
   },
+  {
+    title: "ARCS Research Foundation",
+    year: "2021",
+    status: "Undergraduate Research",
+    tone: "arcs",
+    summary:
+      "An Academic Autonomy Research Center for STEAHM research role in the NASA ARCS program, where I worked with judicial case data and machine-learning preparation before moving into NASA JPL climate data visualization.",
+    tags: ["Python", "Pandas", "TensorFlow", "NER", "Research"],
+    steps: [
+      "I began with research data preparation: dynamically filtering more than 40,000 California judicial cases for Named Entity Recognition workflows.",
+      "I used Python, Pandas, TensorFlow, and Google Colab to improve clarity in uneven entity distribution and case-data processing.",
+      "That research foundation helped lead into my NASA JPL internship, where I shifted from legal data preparation into climate and Earth science visualization.",
+    ],
+  },
+
+
 ];
 
 function App() {
@@ -167,28 +195,29 @@ function Work() {
   return (
     <section id="work" className="work-section" aria-labelledby="work-title">
       <div className="section-heading" data-reveal>
-        <p className="eyebrow">Selected work</p>
-        <h2 id="work-title">Projects with room to grow.</h2>
+        <p className="eyebrow">Build timeline</p>
+        <h2 id="work-title">A timeline of shipped prototypes, AI tools, and research work.</h2>
         <p>
-          Unfinished projects can still communicate direction. These visual placeholders describe the intended features
-          now, then can become screenshots, trailers, App Store links, or GitHub repos later.
+          This section follows the way I build: define the problem, prototype the interaction, connect the data or system,
+          and make the result easy for someone else to understand or try.
         </p>
       </div>
 
-      <div className="project-grid">
-        {projects.map((project, index) => (
-          <ProjectCard key={project.title} project={project} featured={index === 0} />
+      <div className="project-timeline">
+        {projects.map((project) => (
+          <ProjectCard key={project.title} project={project} />
         ))}
       </div>
     </section>
   );
 }
 
-function ProjectCard({ project, featured }) {
+function ProjectCard({ project }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <article className={`project-card ${featured ? "featured" : ""}`} data-reveal>
+    <article className="project-card timeline-card" data-reveal>
+      <div className="timeline-marker" aria-hidden="true">{project.year}</div>
       <ProjectVisual tone={project.tone} />
       <div className="project-copy">
         <p className={`status ${project.tone}`}>{project.status}</p>
